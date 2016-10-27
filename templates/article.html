@@ -5,6 +5,10 @@
     <meta name="description" content="{{article.description}}" />
   {% endif %}
 
+  {% if article.image %}
+  <meta property="og:image" content="{{ article.image }}" />
+  {% endif %}
+
   {% for tag in article.tags %}
     <meta name="tags" content="{{tag}}" />
   {% endfor %}
@@ -21,9 +25,6 @@
  {{ translations.translations_for(article) }}
   </header>
   <footer class="post-info">
-    <time class="published" datetime="{{ article.date.isoformat() }}">
-      {{ article.locale_date }}
-    </time>
 	{% if article.modified %}
     <time class="modified" datetime="{{ article.modified.isoformat() }}">
       {{ article.locale_modified }}
