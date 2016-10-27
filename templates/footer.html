@@ -1,22 +1,22 @@
 <hr>
 
-		<h2>Índice das 10 aulas do Minicurso de lógica de programação</h3>
+		<h2>Índice das {{ TOTAL_LESSONS }} aulas do Minicurso de lógica de programação</h3>
 
 
       {% for item in articles|sort(attribute='order') %}
-        {% if item.order <= TOTAL_LESSONS %}
+        {% if item.order|int() <= TOTAL_LESSONS %}
           <p>
-            {% if item.order == article.order or item.order|int == (article.order)|int() + 1 %}<b>{% endif %}
+            {% if item.order == article.order or item.order|int == (article.order)|int + 1 %}<b>{% endif %}
             {{ item.title }}
             {% if item.order == article.order %}(Você está aqui!){% endif %}
             {% if item.order|int == (article.order)|int() + 1 %}(Próxima aula){% endif %}
-              {% if item.order == article.order or item.order|int == (article.order)|int() + 1 %}</b>{% endif %}
+            {% if item.order == article.order or item.order|int == (article.order)|int + 1 %}</b>{% endif %}
           </p>
         {% endif %}
-        {% if item.order > TOTAL_LESSONS and item.order == article.order %}
+        {% if item.order|int > TOTAL_LESSONS|int and item.order == article.order %}
           <p>
             <b>
-            AULA EXTRA! {{ item.title }}(Você está aqui!){% endif %}
+            AULA EXTRA! {{ item.title }}(Você está aqui!)
             </b>
           </p>
         {% endif %}
