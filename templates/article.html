@@ -10,16 +10,14 @@
 
 {% block content %}
 
-<div class="navbar navbar-default navbar-fixed-top nav-center">
-  <div class="container">
-
-      <span class="top-text">{{ TITLEBAR_TEXT }}</span>
-      <a href="{{ SITEURL }}" class="btn btn-warning navbar-btn"><b>Clique Aqui!</b></a>
-
-  </div>
-</div>
+  {% include 'headbar.html' %}
 
   <div class="container">
     {{ article.content }}
+
+    {% include 'footer.html' %}    
   </div><!-- /container -->
+
+
+
 {% endblock %}
