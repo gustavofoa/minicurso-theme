@@ -2,8 +2,13 @@
 {% block head %}
 
   {{ super() }}
+
+  {% if article.description %}
+    <meta name="description" content="{{article.description}}" />
+  {% endif %}
+
   {% if article.image %}
-  <meta property="og:image" content="{{ article.image }}" />
+    <meta property="og:image" content="{{ SITEURL }}/{{ article.image }}" />
   {% endif %}
 
 {% endblock %}
@@ -15,7 +20,7 @@
   <div class="container">
     {{ article.content }}
 
-    {% include 'footer.html' %}    
+    {% include 'footer.html' %}
   </div><!-- /container -->
 
 
