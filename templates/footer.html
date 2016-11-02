@@ -40,7 +40,7 @@
     		<p>Chegou aqui através do Twitter, Facebook ou link de um amigo?</p>
 
         {% if article.order|int <= TOTAL_LESSONS|int %}
-    		<p>Esta é a aula <b>#{{article.order}}</b> do {{ COURSE_DESCRIPTION }}</p>
+    		<p>Esta é a aula <b>#{{article.order|int}}</b> do {{ COURSE_DESCRIPTION }}</p>
         {% endif %}
 
         {% if article.order|int > TOTAL_LESSONS|int %}
