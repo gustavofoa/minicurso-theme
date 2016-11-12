@@ -6,11 +6,13 @@
       {% for item in articles|sort(attribute='order') %}
         {% if item.order|int() <= TOTAL_LESSONS %}
           <p>
+						{% if item.order|int < article.order|int %}<strike>{% endif %}
             {% if item.order == article.order or item.order|int == (article.order)|int + 1 %}<b>{% endif %}
             {{ item.title }}
             {% if item.order == article.order %}(Você está aqui!){% endif %}
-            {% if item.order|int == (article.order)|int() + 1 %}(Próxima aula){% endif %}
+            {% if item.order|int == (article.order)|int() + 1 %}(Próxima lição){% endif %}
             {% if item.order == article.order or item.order|int == (article.order)|int + 1 %}</b>{% endif %}
+						{% if item.order|int < article.order|int %} (Lição aprendida)</strike>{% endif %}
           </p>
         {% endif %}
         {% if item.order|int > TOTAL_LESSONS|int and item.order == article.order %}
