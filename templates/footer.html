@@ -1,6 +1,6 @@
 <hr>
 
-		<h2>Índice das {{ TOTAL_LESSONS }} aulas do Minicurso de lógica de programação</h3>
+		<h2>Índice das {{ TOTAL_LESSONS }} lições do Minicurso de lógica de programação</h3>
 
 
       {% for item in articles|sort(attribute='order') %}
@@ -41,11 +41,11 @@
     		<p>Chegou aqui através do Twitter, Facebook ou link de um amigo?</p>
 
         {% if article.order|int <= TOTAL_LESSONS|int %}
-    		<p>Esta é a aula <b>#{{article.order|int}}</b> do {{ COURSE_DESCRIPTION }}</p>
+    		<p>Esta é a lição <b>#{{article.order|int}}</b> do {{ COURSE_DESCRIPTION }}</p>
         {% endif %}
 
         {% if article.order|int > TOTAL_LESSONS|int %}
-    		<p>Esta é uma aula <b>BÔNUS</b> do {{ COURSE_DESCRIPTION }}</p>
+    		<p>Esta é uma lição <b>BÔNUS</b> do {{ COURSE_DESCRIPTION }}</p>
         {% endif %}
 
         {{ FOOTER_PSS }}
