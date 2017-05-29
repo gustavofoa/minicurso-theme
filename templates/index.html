@@ -12,7 +12,7 @@
 
 <div class="container">
 
-	<img style='margin-left:auto;margin-right:auto;display:block;' src="{{ LP_IMAGE }}" width="100%" />
+	<img style='margin-left:auto;margin-right:auto;display:block;' src="{{ LP_IMAGE }}" max-width="100%" />
 
 	<h1 style='text-align:center;font-size:50px;'>{{ LP_TITLE }}</h1>
   <br />
@@ -23,7 +23,7 @@
     	<br/>
       <center>
       	<div class="input-group input-group-lg">
-      	  <input type="text" class="form-control" placeholder="coloque seu e-mail aqui..." size="30" name="email" id="email"/>
+      	  <input type="text" class="form-control" placeholder="coloque seu e-mail aqui..." size="30" name="{{ LP_EMAIL_FIELD }}" id="email"/>
       	</div>
       </center>
       <br />
@@ -33,6 +33,10 @@
     	Não vamos te enviar spams!
   	</div>
 	</form>
+
+
+
+
 
 </div><!-- /container -->
 
